@@ -1,13 +1,10 @@
 import React from 'react';
 
-const Name = props => {
-
+const NameForm = props => {
         return (
             <div>
 
                 <div className="container">
-                    <div className="row">
-                        <div className="col s8 m8">
                             <input
                                 id="inputName"
                                 type="text"
@@ -16,13 +13,9 @@ const Name = props => {
                                 value={props.temporalName}>
                               </input>
                         </div>
-                        <div className="col s4 m4">
                         <button className="waves-effect btn btn-save" onClick= {props.onClick} >Enviar</button>
                         </div>
-                    </div>
-                </div>
-            </div>
         )
 }
 
-export default Name;
+export default NameForm;

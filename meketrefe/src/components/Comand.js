@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
-import NameForm from './component/NameForm';
-import Breakfast from './component/Breakfast';
+import NameForm from './NameForm';
+import Breakfast from './Breakfast';
+
 
 class Comand extends Component {
     constructor(props){
@@ -8,58 +9,78 @@ class Comand extends Component {
         this.state= {
           orders:[]
         }
-        this.addNote = this.addNote.bind(this);
+        this.addName = this.addName.bind(this);
         this.addOrders = this.addOrders.bind(this);
 
 
      }
 
-breakBtn(){
-    document.getElementById('breakfastIndex').style.display="block";
-    document.getElementById('lunchIndex').style.display="none";
-  }
 
-sendToKitchen(){
-    document.getElementById('orderReady').style.display="block";
-    document.getElementById('orderTable').style.display="none";
-
-}
-
-newOrders(){
-document.getElementById('orderReady').style.display="none";
-document.getElementById('orderTable').style.display="block";
-
-}
-
-addNote(name){
+addName(name){
 this.setState({
   name
 });
 
-  }
-
-addOrders(orders){
-this.setState({
-  orders
-});
-
 }
 
-removeRow = (event, index) => {
-        event.preventDefault();
-        this.state.orders.splice(index, 1);
-        this.setState({tr: this.state.orders});
-    }
+  addOrders(orders){
+    console.log(this.state.orders)
+  this.setState({
+  orders: [...this.state.orders, orders]
+  });
+
+  }
 
 render(){
  return(
 
  <div>
       <div>
-      
-      </div>
- </div>
-    );
+
+
+        <div>
+
+          <div>
+          <NameForm  addName={this.addName} />
+          </div>
+
+                <div >
+                              <div>
+                              <Breakfast addOrders={this.addOrders}/>
+                              </div>
+                </div>
+
+       </div>
+
+
+
+       <div>
+
+              <div><h5>Mesero: <span >{this.state.name}</span></h5></div>
+
+
+
+            <div>Comida</div>
+            <div>Precio</div>
+
+
+
+           <div> {this.state.orders.map((order, index) =>
+                  <div key={index}>
+
+                    <div>{order.item}</div>
+                    <div>{order.price}</div>
+                  </div>
+                )}
+
+           </div>
+           </div>
+
+           </div>
+
+
+    </div>
+  );
 
 }
 

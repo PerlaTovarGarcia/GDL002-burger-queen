@@ -2,7 +2,7 @@
   "name": "meketrefe",
   "version": "0.1.0",
   "private": true,
-  "homepage":" https://perlatovargarcia.github.io/GDL002-burger-queen/",
+  "homepage":"https://perlatovargarcia.github.io/GDL002-burger-queen/",
   "dependencies": {
     "gh-pages": "^2.0.1",
     "react": "^16.8.6",

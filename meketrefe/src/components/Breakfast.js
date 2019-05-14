@@ -1,18 +1,23 @@
 import React, {Component} from 'react';
+
 import BreakData from './breakfast.json'
 
 
 
 class Breakfast extends Component {
-    constructor(){
-        super();
+    constructor(props){
+        super(props);
         this.state = {
            orders:[]
         }
-         this.handleSubmit = this.handleSubmit.bind(this);
+         this.submit = this.submit.bind(this);
 }
 
- handleSubmit(nameItem, price){
+
+
+ submit(nameItem, price){
+   //console.log(nameItem, price)
+   //console.log('props', this.props.addOrders)
     const orders = this.state.orders;
 
     const order = {
@@ -22,23 +27,22 @@ class Breakfast extends Component {
 
     orders.push(order);
     this.props.addOrders(this.state.orders);
-
-
     }
 
 
 
 
     render(){
+
         return(
         <div>
              {BreakData.map((postDetail, index) =>
-              <div key={index} className="flip-card-front">
-                <h1 className="activator">{postDetail.name}</h1>
-                <h1 className="activator">{postDetail.price}</h1>
-                <button variant="warning" onClick={()=>{
-                          this.handleSubmit(postDetail.name, postDetail.price);
-                      }} type="submit" >Agregar</button>
+              <div key={index}>
+                <h1>{postDetail.name}</h1>
+                <h1>{postDetail.price}</h1>
+                <button onClick={()=>{
+                            this.submit(postDetail.name, postDetail.price);
+                        }} type="submit" >Agregar</button>
               </div>
 
 
