@@ -7,7 +7,8 @@ class Comand extends Component {
     constructor(props){
         super(props);
         this.state= {
-          orders:[]
+          orders:[],
+          value:'Perla'
         }
         this.addName = this.addName.bind(this);
         this.addOrders = this.addOrders.bind(this);
@@ -16,9 +17,10 @@ class Comand extends Component {
      }
 
 
-addName(name){
+
+addName(value){
 this.setState({
-  name
+  value
 });
 
 }
@@ -63,7 +65,7 @@ render(){
 
        <div>
 
-              <div><h5>Mesero: <span >{this.state.name}</span></h5></div>
+              <div><h5>Mesero: <span >{this.state.value}</span></h5></div>
 
            <div>
            {this.state.orders.map((orders, index) =>
