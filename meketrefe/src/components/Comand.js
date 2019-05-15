@@ -8,7 +8,7 @@ class Comand extends Component {
         super(props);
         this.state= {
           orders:[],
-          value:'Perla'
+          value:''
         }
         this.addName = this.addName.bind(this);
         this.addOrders = this.addOrders.bind(this);
