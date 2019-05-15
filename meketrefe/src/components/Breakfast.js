@@ -53,4 +53,4 @@ class Breakfast extends Component {
     }
 }
 
-export default Breakfast
+export default Breakfast;

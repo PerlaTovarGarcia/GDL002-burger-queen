@@ -25,11 +25,18 @@ this.setState({
 
   addOrders(orders){
     console.log(this.state.orders)
-  this.setState({
-  orders: [...this.state.orders, orders]
-  });
+
+    this.setState({
+      orders
+    });
 
   }
+
+  removeRow = (event, index) => {
+        event.preventDefault();
+        this.state.orders.splice(index, 1);
+        this.setState({div:this.state.orders});
+    }
 
 render(){
  return(
@@ -58,18 +65,12 @@ render(){
 
               <div><h5>Mesero: <span >{this.state.name}</span></h5></div>
 
-
-
-            <div>Comida</div>
-            <div>Precio</div>
-
-
-
-           <div> {this.state.orders.map((order, index) =>
+           <div>
+           {this.state.orders.map((orders, index) =>
                   <div key={index}>
-
-                    <div>{order.item}</div>
-                    <div>{order.price}</div>
+                   <div>Comida {orders.item}</div>
+                    <div>Precio {orders.price}</div>
+                    <button  onClick={(event) => this.removeRow(event, index)}>eliminar</button>
                   </div>
                 )}
 
