@@ -1,0 +1,18 @@
+[
+  {
+     "name": "Refresco",
+     "price":"$20"
+   },
+   {
+     "name": "Agua",
+     "price":"$10"
+   },
+   {
+     "name": "Hamburguesa con papas",
+     "price":"$10"
+   },
+   {
+     "name": "Hamburguesa sin papas",
+     "price":"$10"
+   }
+]

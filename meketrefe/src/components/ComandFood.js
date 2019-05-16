@@ -1,17 +1,17 @@
 import React, {Component} from 'react';
 import NameForm from './NameForm';
-import Breakfast from './Breakfast';
+import Food from './Food';
+import {Link}from 'react-router-dom';
 
-
-class Comand extends Component {
+class ComandFood extends Component {
     constructor(props){
         super(props);
         this.state= {
-          orders:[],
+          ordersFood:[],
           value:''
         }
         this.addName = this.addName.bind(this);
-        this.addOrders = this.addOrders.bind(this);
+        this.addOrdersFood = this.addOrdersFood.bind(this);
 
 
      }
@@ -25,19 +25,19 @@ this.setState({
 
 }
 
-  addOrders(orders){
-    console.log(this.state.orders)
+  addOrdersFood(ordersFood){
+    console.log(this.state.ordersFood)
 
     this.setState({
-      orders
+      ordersFood
     });
 
   }
 
   removeRow = (event, index) => {
         event.preventDefault();
-        this.state.orders.splice(index, 1);
-        this.setState({div:this.state.orders});
+        this.state.ordersFood.splice(index, 1);
+        this.setState({div:this.state.ordersFood});
     }
 
 render(){
@@ -45,7 +45,8 @@ render(){
 
  <div>
       <div>
-
+          <Link to="/comandBreakfast" className="link">Desayuno.</Link>
+          <Link to="/" className="link">Salir.</Link>
 
         <div>
 
@@ -55,7 +56,7 @@ render(){
 
                 <div >
                               <div>
-                              <Breakfast addOrders={this.addOrders}/>
+                              <Food addOrdersFood={this.addOrdersFood}/>
                               </div>
                 </div>
 
@@ -68,7 +69,7 @@ render(){
               <div><h5>Mesero: <span >{this.state.value}</span></h5></div>
 
            <div>
-           {this.state.orders.map((orders, index) =>
+           {this.state.ordersFood.map((orders, index) =>
                   <div key={index}>
                    <div>Comida {orders.item}</div>
                     <div>Precio {orders.price}</div>
@@ -89,4 +90,4 @@ render(){
 
 }
 
-export default Comand;
+export default ComandFood;

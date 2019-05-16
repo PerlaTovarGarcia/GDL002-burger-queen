@@ -1,19 +1,33 @@
-import React from 'react';
+import React, {Component} from 'react';
 import './App.css';
-//import Name from './components/NameForm';
+//import PropTypes from 'prop-types';
+//import Content from './Content';
+import {BrowserRouter, Route, Switch} from 'react-router-dom';
+
+
+import Kitchen from './components/Kitchen';
+import Home from './components/Home';
+import ComandBreakfast from './components/ComandBreakfast';
+import ComandFood from './components/ComandFood';
+
 //import Breakfast from './components/Breakfast';
-import Comand from './components/Comand';
+//import ComandBreakfast from './components/ComandBreakfast';
+//import ComandFood from './components/ComandFood';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-      </header>
-
-      <Comand/>
-
-    </div>
+class App extends Component {
+  render(){
+    return(
+  <BrowserRouter>
+    <Switch>
+      <Route path="/" component={Home} exact/>
+      <Route path="/comandBreakfast" component={ComandBreakfast}/>
+      <Route path="/comandFood" component={ComandFood}/>
+      <Route path="/kitchen" component={Kitchen}/>
+    </Switch>
+    </BrowserRouter>
   );
-}
+  }
+
+};
 
 export default App;
