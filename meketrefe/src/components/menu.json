@@ -1,0 +1,38 @@
+{
+  "breakfast": [
+    {
+       "name": "Café Americano",
+       "price":"$20"
+     },
+     {
+       "name": "Café con Leche",
+       "price":"$10"
+     },
+     {
+       "name": "Sandwich jamón con queso",
+       "price":"$10"
+     },
+     {
+       "name": "Jugo Natural",
+       "price":"$10"
+     }
+  ],
+  "food": [
+    {
+       "name": "Refresco",
+       "price":"$20"
+     },
+     {
+       "name": "Agua",
+       "price":"$10"
+     },
+     {
+       "name": "Hamburguesa con papas",
+       "price":"$10"
+     },
+     {
+       "name": "Hamburguesa sin papas",
+       "price":"$10"
+     }
+  ]
+}

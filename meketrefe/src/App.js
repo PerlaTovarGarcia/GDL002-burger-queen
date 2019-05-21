@@ -7,8 +7,9 @@ import {BrowserRouter, Route, Switch} from 'react-router-dom';
 
 import Kitchen from './components/Kitchen';
 import Home from './components/Home';
-import ComandBreakfast from './components/ComandBreakfast';
+//import ComandBreakfast from './components/ComandBreakfast';
 import ComandFood from './components/ComandFood';
+import BreakfastFirebase from './components/BreakfastFirebase';
 
 //import Breakfast from './components/Breakfast';
 //import ComandBreakfast from './components/ComandBreakfast';
@@ -20,7 +21,7 @@ class App extends Component {
   <BrowserRouter>
     <Switch>
       <Route path="/" component={Home} exact/>
-      <Route path="/comandBreakfast" component={ComandBreakfast}/>
+      <Route path="/breakfastFirebase" component={BreakfastFirebase}/>
       <Route path="/comandFood" component={ComandFood}/>
       <Route path="/kitchen" component={Kitchen}/>
     </Switch>

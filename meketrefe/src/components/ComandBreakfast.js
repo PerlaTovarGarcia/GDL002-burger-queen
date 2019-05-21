@@ -1,7 +1,9 @@
 import React, {Component} from 'react';
 import NameForm from './NameForm';
-import Breakfast from './Breakfast';
+import BreakfastFirebase from './BreakfastFirebase';
 import {Link}from 'react-router-dom';
+import firebase from '../firebase';
+//import * as firebase from 'firebase/app';
 
 
 class ComandBreakfast extends Component {
@@ -41,47 +43,21 @@ this.setState({
         this.setState({div:this.state.orders});
     }
 
+
 render(){
+
  return(
 
  <div>
-      <div>
 
-          <Link to="/comandFood" className="link">Comida.</Link>
-          <Link to="/" className="link">Salir.</Link>
-        <div>
-
-          <div>
-          <NameForm  addName={this.addName} />
-          </div>
-
-                <div >
-                              <div>
-                              <Breakfast addOrders={this.addOrders}/>
-                              </div>
-                </div>
-
-       </div>
-
-
-
-       <div>
-
-              <div><h5>Mesero: <span >{this.state.value}</span></h5></div>
-
-           <div>
            {this.state.orders.map((orders, index) =>
+
                   <div key={index}>
-                   <div>Comida {orders.item}</div>
+                   <div>Comida {orders.name}</div>
                     <div>Precio {orders.price}</div>
                     <button  onClick={(event) => this.removeRow(event, index)}>eliminar</button>
                   </div>
                 )}
-
-           </div>
-           </div>
-
-           </div>
 
 
     </div>
