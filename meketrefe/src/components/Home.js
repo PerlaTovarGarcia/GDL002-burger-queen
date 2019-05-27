@@ -11,7 +11,7 @@ class Home extends Component {
               <h3>Burger Queen</h3>
               <div>
                   <Link to="/kitchen" className="link">Cocina.</Link>
-                  <Link to="/comandBreakfast" className="link">Pedidos.</Link>
+                  <Link to="/breakfastFirebase" className="link">Pedidos.</Link>
               </div>
         </div>
           );

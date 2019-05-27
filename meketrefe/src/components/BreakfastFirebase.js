@@ -18,6 +18,7 @@
       //this.componentOrders = this.componentOrders.bind(this);
       this.submit = this.submit.bind(this);
       this.addName = this.addName.bind(this);
+      //this.addOrders = this.addOrders.bind(this);
 
     };
 
@@ -27,23 +28,17 @@
       });
 
     }
-    submit(name, price){
-      console.log(name, price)
-      //console.log('props', this.props.addOrders)
-      //const orders = this.state.orders;
 
+    submit(name, price){
       const order = {
         name: name,
         price: price
       }
-      //   console.log(orders)
-      this.setState({
-        comands:[...this.state.comands, order]
-        //this.props.addOrders(this.state.orders);
-      })
 
-      //orders.push(order);
-      //this.props.addOrders(this.state.orders);
+      this.setState({
+        comands:[...this.state.comands,order]
+
+      })
     }
 
 
@@ -52,7 +47,11 @@
       console.log('el componente se agregó al DOM')
       this.componentOrders();
       //this.props.addOrders(this.state.new);
-
+      /*const ordersRef=firebase.database().ref().child('order');
+       ordersRef.set([
+           comands
+      ]);*/
+      this.componentComands();
     }
 
     componentOrders(){
@@ -69,9 +68,7 @@
             price: ordersNew[order].price
 
           });
-
-
-        }
+          }
 
         this.setState({
 
@@ -80,8 +77,19 @@
         });
 
       });
-      //this.props.addOrders(this.state.orders);
+
     }
+
+    componentComands(){
+      const ordersRef=firebase.database().ref().child('orderBreakfast');
+
+      ordersRef.set([
+
+      ]);
+
+    }
+
+
     removeRow = (event, index) => {
           event.preventDefault();
           this.state.comands.splice(index, 1);
@@ -91,11 +99,12 @@
 
 
     render(){
+      console.log(this.state.comands);
       return (
         <div>
         <div>
 
-        <Link to="/comandFood" className="link">Comida.</Link>
+        <Link to="/food" className="link">Comida.</Link>
         <Link to="/" className="link">Salir.</Link>
 
         <div>
@@ -125,10 +134,10 @@
                 <div><h5>Mesero: <span >{this.state.value}</span></h5></div>
         </div>
         <div>
-              <ul>
+              <div>
                 {this.state.comands.map((comand, index) => {
                   return(
-                  <div key={comand.name}>
+                  <div key={index}>
                   <h3>{comand.name}</h3>
                   <p>{comand.price}</p>
                   <button  onClick={(event) => this.removeRow(event, index)}>eliminar</button>
@@ -137,7 +146,7 @@
                 )}
               )
                 }
-              </ul>
+              </div>
         </div>
 
         </div>

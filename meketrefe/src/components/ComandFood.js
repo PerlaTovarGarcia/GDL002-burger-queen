@@ -45,7 +45,7 @@ render(){
 
  <div>
       <div>
-          <Link to="/comandBreakfast" className="link">Desayuno.</Link>
+          <Link to="/breakfastFirebase" className="link">Desayuno.</Link>
           <Link to="/" className="link">Salir.</Link>
 
         <div>
