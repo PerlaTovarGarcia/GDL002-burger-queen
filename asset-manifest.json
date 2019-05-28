@@ -1,19 +1,19 @@
 {
   "files": {
-    "main.css": "/GDL002-burger-queen/static/css/main.87ab72b1.chunk.css",
-    "main.js": "/GDL002-burger-queen/static/js/main.d397f82d.chunk.js",
-    "main.js.map": "/GDL002-burger-queen/static/js/main.d397f82d.chunk.js.map",
-    "runtime~main.js": "/GDL002-burger-queen/static/js/runtime~main.2601196f.js",
-    "runtime~main.js.map": "/GDL002-burger-queen/static/js/runtime~main.2601196f.js.map",
-    "static/js/2.f49f544f.chunk.js": "/GDL002-burger-queen/static/js/2.f49f544f.chunk.js",
-    "static/js/2.f49f544f.chunk.js.map": "/GDL002-burger-queen/static/js/2.f49f544f.chunk.js.map",
-    "index.html": "/GDL002-burger-queen/index.html",
-    "precache-manifest.ccc6b65510f57e914c7738777e87380f.js": "/GDL002-burger-queen/precache-manifest.ccc6b65510f57e914c7738777e87380f.js",
-    "service-worker.js": "/GDL002-burger-queen/service-worker.js",
-    "static/css/main.87ab72b1.chunk.css.map": "/GDL002-burger-queen/static/css/main.87ab72b1.chunk.css.map",
-    "static/media/logo.png": "/GDL002-burger-queen/static/media/logo.e6873da0.png",
-    "static/media/App.css": "/GDL002-burger-queen/static/media/logo1.b533b5fe.png",
-    "static/media/logo2.png": "/GDL002-burger-queen/static/media/logo2.c7987921.png",
-    "static/media/logo3.png": "/GDL002-burger-queen/static/media/logo3.07ed333a.png"
+    "main.css": "/GDL002-burger-queen/meketrefe/static/css/main.2c4ec503.chunk.css",
+    "main.js": "/GDL002-burger-queen/meketrefe/static/js/main.dd63e862.chunk.js",
+    "main.js.map": "/GDL002-burger-queen/meketrefe/static/js/main.dd63e862.chunk.js.map",
+    "runtime~main.js": "/GDL002-burger-queen/meketrefe/static/js/runtime~main.9d44ecef.js",
+    "runtime~main.js.map": "/GDL002-burger-queen/meketrefe/static/js/runtime~main.9d44ecef.js.map",
+    "static/js/2.4d16ecbc.chunk.js": "/GDL002-burger-queen/meketrefe/static/js/2.4d16ecbc.chunk.js",
+    "static/js/2.4d16ecbc.chunk.js.map": "/GDL002-burger-queen/meketrefe/static/js/2.4d16ecbc.chunk.js.map",
+    "index.html": "/GDL002-burger-queen/meketrefe/index.html",
+    "precache-manifest.3c313a9a1663bd2b3bd0b570ad9b7d51.js": "/GDL002-burger-queen/meketrefe/precache-manifest.3c313a9a1663bd2b3bd0b570ad9b7d51.js",
+    "service-worker.js": "/GDL002-burger-queen/meketrefe/service-worker.js",
+    "static/css/main.2c4ec503.chunk.css.map": "/GDL002-burger-queen/meketrefe/static/css/main.2c4ec503.chunk.css.map",
+    "static/media/logo.png": "/GDL002-burger-queen/meketrefe/static/media/logo.e6873da0.png",
+    "static/media/App.css": "/GDL002-burger-queen/meketrefe/static/media/logo1.b533b5fe.png",
+    "static/media/logo2.png": "/GDL002-burger-queen/meketrefe/static/media/logo2.c7987921.png",
+    "static/media/logo3.png": "/GDL002-burger-queen/meketrefe/static/media/logo3.07ed333a.png"
   }
 }
