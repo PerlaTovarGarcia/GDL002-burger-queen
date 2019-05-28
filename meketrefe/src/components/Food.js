@@ -69,6 +69,7 @@ class Food extends Component {
 
         newState.push({
           id: order,
+          image:ordersNew[order].image,
           name: ordersNew[order].name,
           price: ordersNew[order].price
 
