@@ -4,6 +4,11 @@ import {Link}from 'react-router-dom';
 //import ComandBreakfast from './ComandBreakfast';
 import NameForm from './NameForm';
 import firebase from '../firebase';
+import '../css/breacfast.css';
+import '../css/links.css';
+import '../css/nameForm.css';
+import logo from '../imagenes/logo.png';
+
 
 
 class Food extends Component {
@@ -89,6 +94,17 @@ class Food extends Component {
 
   }
 
+  sumItem () {
+      const itemPrice = this.state.comands.map((el) => el.price)
+      const products = itemPrice.reduce((sum, result) => {
+          return sum + result;
+      });
+
+      this.setState({
+          total: products
+      })
+  }
+
 
   removeRow = (event, index) => {
         event.preventDefault();
@@ -103,44 +119,47 @@ class Food extends Component {
     return (
       <div>
       <div>
-
-      <Link to="/BreakfastFirebase" className="link">Desayuno.</Link>
-      <Link to="/" className="link">Salir.</Link>
-
+      <div className = 'but'>
+      <a><Link to="/BreakfastFirebase" className = 'buttons' style={{ textDecoration: 'none'}}>Desayuno.</Link></a>
+      <a><Link to="/" className = 'buttons' style={{ textDecoration: 'none'}}>Salir.</Link></a>
+      </div>
       <div>
       <NameForm  addName={this.addName} />
       </div>
       <div>
-      <section>
+      <span className='cont'>
       {this.state.orders.map((postDetail)=>{
         return(
-          <div key={postDetail.name}>
-
+          <div className='card' style={{margin:'1%'}} key={postDetail.name}>
+          <div>
+              <img src={postDetail.image} alt=""/>
+          </div>
+          <span className="container">
           <h3>{postDetail.name}</h3>
           <p>{postDetail.price}</p>
-          <button onClick={()=>{
+          <button className="sumit" onClick={()=>{
             this.submit(postDetail.name, postDetail.price);
           }} type="submit" >Agregar</button>
-
+          </span>
           </div>
         )
       })}
 
-      </section>
+      </span>
 
       </div>
 
       <div>
-              <div><h5>Mesero: <span >{this.state.value}</span></h5></div>
+              <div className="butt"><h5>Mesero: <span >{this.state.value}</span></h5></div>
       </div>
       <div>
             <div>
               {this.state.comands.map((comand, index) => {
                 return(
-                <div key={index}>
-                <h3>{comand.name}</h3>
-                <p>{comand.price}</p>
-                <button  onClick={(event) => this.removeRow(event, index)}>eliminar</button>
+                <div  className="contenedorOrder" key={index}>
+                <h3  className="order">{comand.name}</h3>
+                <p className="order">{comand.price}</p>
+                <button className="sumit" onClick={(event) => this.removeRow(event, index)}>eliminar</button>
 
               </div>
               )}
@@ -148,12 +167,17 @@ class Food extends Component {
               }
             </div>
       </div>
+          <div>
+          <button className="sumit" onClick={this.sumItem}>Total: $ {this.state.total}</button>
+          </div>
+
 
       </div>
       </div>
 
 
-    );
+    )
+
 
   };
 }

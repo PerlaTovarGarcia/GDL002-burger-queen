@@ -3,6 +3,7 @@ import './App.css';
 //import PropTypes from 'prop-types';
 //import Content from './Content';
 import {BrowserRouter, Route, Switch} from 'react-router-dom';
+//import './css/home.css';
 
 
 import Kitchen from './components/Kitchen';

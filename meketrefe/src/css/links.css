@@ -1,0 +1,34 @@
+@import url("https://fonts.googleapis.com/css?family=Englebert|Jua|KoHo&display=swap");
+
+.buttonsInicio{
+  font-size: 300%;
+  font-family:"Jua";
+  margin-top: -200px;
+}
+
+.buttonsInicio a{
+  background-color: rgb(166,167,166,0.5);
+}
+
+.buttonsInicio a:hover{
+  background-color: rgb(255,222,0);
+  color: #434A54;
+}
+
+.buttons{
+  margin: 6%;
+  color: white;
+}
+.but{
+  font-size: 300%;
+  font-family:"Jua";
+  margin-top: 0px;
+}
+.but a{
+  background-color: rgb(166,167,166,0.5);
+}
+
+.but a:hover{
+  background-color: rgb(255,222,0);
+  color: #434A54;
+}

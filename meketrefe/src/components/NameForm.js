@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+  import '../css/nameForm.css';
 
 
 class NameForm extends Component {
@@ -29,16 +30,16 @@ class NameForm extends Component {
   render() {
     return (
       <form onSubmit={this.handleSubmit}>
-        <label>
+        <label className = 'butt'>
           Mesero que atendio:
-          <select variant="warning" value={this.state.value} onChange={this.handleChange}>
+          <select className="orderSelect" variant="warning" value={this.state.value} onChange={this.handleChange}>
             <option value="Perla">Perla</option>
             <option value="Gerardo">Gerardo</option>
             <option value="Sandra">Sandra</option>
             <option value="Luis">Luis</option>
           </select>
         </label>
-        <input type="submit" value="Submit" />
+        <input className="sumit" type="submit" value="Submit" />
       </form>
     );
   }

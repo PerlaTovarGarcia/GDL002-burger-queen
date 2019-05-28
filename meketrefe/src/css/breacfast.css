@@ -1,0 +1,41 @@
+@import url("https://fonts.googleapis.com/css?family=Englebert|Jua|KoHo&display=swap");
+.order{
+  font-size: 100%;
+  font-family:"Jua";
+  margin-top: 0px;
+  color: #FFDE00;
+}
+
+.contenedorOrder{
+  display: flex;
+  justify-content: center;
+}
+
+.cont{
+  display: flex;
+  justify-content: center;
+}
+
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  transition: 0.3s;
+  width: 10%;
+  border-radius: 5px;
+
+}
+
+.card:hover {
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+img {
+  border-radius: 5px 5px 0 0;
+  width: 100%;
+}
+
+
+.container {
+  font-size: 100%;
+  justify-content: center;
+  font-family:"Jua";
+  color: #FFDE00;
+}

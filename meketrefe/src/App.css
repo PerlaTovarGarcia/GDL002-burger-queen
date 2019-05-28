@@ -1,1 +1,25 @@
+body{
+  background-color: #434A54;
+  background: url(./imagenes/logo1.png);
+  background-repeat: no-repeat;
+  width:100%;
+  height:100%;
 
+}
+
+.App-body {
+ /* Center the image */ /* Do not repeat the image */
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}

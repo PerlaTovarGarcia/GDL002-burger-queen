@@ -1,0 +1,23 @@
+.butt{
+  font-size: 200%;
+  font-family:"Jua";
+  margin-top: 0px;
+  color: #FFDE00;
+}
+
+.orderSelect {
+ width: 16%;
+ height: 30%;
+ font-size: 100%;
+ justify-content: center;
+ color: #FFDE00;
+ font-family:"Jua";
+ }
+
+ .sumit {
+   background-color: rgb(255,255,255,0.3);
+  font-size: 100%;
+  justify-content: center;
+  color: #FFDE00;
+  font-family:"Jua";
+  }
