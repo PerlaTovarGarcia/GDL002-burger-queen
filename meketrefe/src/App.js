@@ -21,7 +21,7 @@ class App extends Component {
     return(
   <BrowserRouter>
     <Switch>
-      <Route path="/" component={Home}/>
+      <Route path="/" component={Home} exact/>
       <Route path="/breakfastFirebase" component={BreakfastFirebase}/>
       <Route path="/food" component={Food}/>
       <Route path="/kitchen" component={Kitchen}/>
