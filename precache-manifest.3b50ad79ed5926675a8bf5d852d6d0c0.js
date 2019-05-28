@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "96d4099387ffc85da9e5a5abbbf91826",
+    "revision": "6420f9b699d73a9cb3ef13def76f0661",
     "url": "/GDL002-burger-queen/index.html"
   },
   {
