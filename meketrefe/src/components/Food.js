@@ -7,7 +7,7 @@ import firebase from '../firebase';
 import '../css/breacfast.css';
 import '../css/links.css';
 import '../css/nameForm.css';
-import logo from '../imagenes/logo.png';
+//import logo from '../imagenes/logo.png';
 
 
 
@@ -120,9 +120,9 @@ class Food extends Component {
     return (
       <div>
       <div>
-      <div className = 'but'>
-      <a><Link to="/BreakfastFirebase" className = 'buttons' style={{ textDecoration: 'none'}}>Desayuno.</Link></a>
-      <a><Link to="/" className = 'buttons' style={{ textDecoration: 'none'}}>Salir.</Link></a>
+      <div>
+      <button className = 'but'><Link to="/BreakfastFirebase" className = 'buttons' style={{ textDecoration: 'none'}}>Desayuno.</Link></button>
+      <button className = 'but'><Link to="/" className = 'buttons' style={{ textDecoration: 'none'}}>Salir.</Link></button>
       </div>
       <div>
       <NameForm  addName={this.addName} />

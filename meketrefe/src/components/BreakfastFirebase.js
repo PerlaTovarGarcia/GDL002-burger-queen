@@ -1,13 +1,10 @@
   import React, {Component} from 'react';
   import {Link}from 'react-router-dom';
-  //import ComandBreakfast from './BreakfastOrder';
-  //import ComandBreakfast from './ComandBreakfast';
   import NameForm from './NameForm';
   import firebase from '../firebase';
   import '../css/breacfast.css';
   import '../css/links.css';
   import '../css/nameForm.css';
-  import logo from '../imagenes/logo.png';
 
 
   class BreakfastFirebase extends Component {
@@ -24,6 +21,7 @@
       this.submit = this.submit.bind(this);
       this.addName = this.addName.bind(this);
       this.sumItem = this.sumItem.bind(this);
+      this.updateOrderToFirebase = this.updateOrderToFirebase.bind(this);
 
     };
 
@@ -58,7 +56,7 @@
        ordersRef.set([
            comands
       ]);*/
-      this.componentComands();
+      //this.componentComands();
     }
 
     componentOrders(){
@@ -88,13 +86,13 @@
 
     }
 
-    componentComands(){
-      const ordersRef=firebase.database().ref().child('orderBreakfast');
 
-      ordersRef.set([
-
-      ]);
-
+    updateOrderToFirebase = props =>{
+     let order = this.props.order;
+     const foodOrder =  firebase.database().ref('Ordenes/').child("order").push().key;
+     let updates = {};
+     updates["Ordenes/" + foodOrder] = order;
+     return (firebase.database().ref().update(updates), order="")
     }
 
 
@@ -122,9 +120,9 @@
       return (
         <div>
         <div>
-        <div className = 'but'>
-        <a><Link to="/food" className = 'buttons' style={{ textDecoration: 'none'}}>Comida.</Link></a>
-        <a><Link to="/" className = 'buttons' style={{ textDecoration: 'none'}}>Salir.</Link></a>
+        <div >
+        <button className = 'but'><Link to="/food" className = 'buttons' >Comida.</Link></button>
+        <button className = 'but'><Link to="/" className = 'buttons' >Salir.</Link></button>
         </div>
         <div>
         <NameForm  addName={this.addName} />
@@ -176,6 +174,10 @@
 
 
         </div>
+        <div className="container">
+                   {console.log(this.props.order)}
+                   <button type="submit"  onClick={this.updateOrderToFirebase}>Enviar a cocina</button>
+               </div>
         </div>
 
 

@@ -11,13 +11,15 @@ class Home extends Component {
 
         <div>
             <div>
-            <img src={logo} alt="Logo" style={{ width:'100%', height:'100%'}}/>
+            <img src={logo} alt="Logo" style={{ width:'103%', height:'100%'}}/>
             </div>
               <div className = 'buttonsInicio'>
-                  <a><Link to="/kitchen" className = 'buttons' style={{ textDecoration: 'none'}}>Cocina.
-                  </Link></a>
-                  <a><Link to="/breakfastFirebase" className = 'buttons' style={{ textDecoration: 'none'}}>Pedidos.
-                  </Link></a>
+
+                  <Link to="kitchen" className = 'buttons' >Cocina.</Link>
+
+
+                  <Link to="breakfastFirebase" className = 'buttons'>Pedidos.</Link>
+
               </div>
         </div>
           )
