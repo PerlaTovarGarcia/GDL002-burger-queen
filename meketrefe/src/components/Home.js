@@ -15,10 +15,10 @@ class Home extends Component {
             </div>
               <div className = 'buttonsInicio'>
 
-                  <Link to="kitchen" className = 'buttons' >Cocina.</Link>
+                  <Link to="kitchen" className = 'buttons' style={{ textDecoration: 'none'}}>Cocina.</Link>
 
 
-                  <Link to="breakfastFirebase" className = 'buttons'>Pedidos.</Link>
+                  <Link to="breakfastFirebase" className = 'buttons'style={{ textDecoration: 'none'}}>Pedidos.</Link>
 
               </div>
         </div>

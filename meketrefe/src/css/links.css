@@ -8,6 +8,8 @@
 
 .buttonsInicio a{
   background-color: rgb(166,167,166,0.5);
+
+  border-radius: 15px;
 }
 
 .buttonsInicio a:hover{
@@ -18,12 +20,15 @@
 .buttons{
   margin: 6%;
   color: white;
+  border-radius: 15px;
 }
 .but{
   font-size: 300%;
   font-family:"Jua";
   margin-top: 0px;
+  margin: 1%;
     background-color: rgb(166,167,166,0.5);
+    border-radius: 15px;
 }
 
 .but:hover{

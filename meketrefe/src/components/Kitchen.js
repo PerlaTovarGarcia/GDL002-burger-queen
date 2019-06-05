@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import {Link}from 'react-router-dom';
 import '../css/links.css';
+import '../css/breacfast.css';
 //import logo from '../imagenes/logo3.png';
 import firebase from '../firebase';
 
@@ -11,6 +12,7 @@ class Kitchen extends Component {
       orders:[]
 
     };
+
 
   };
   componentDidMount() {
@@ -37,26 +39,33 @@ class Kitchen extends Component {
 
   }
 
+  removeRow = (event, index) => {
+        event.preventDefault();
+        this.state.orders.splice(index, 1);
+        this.setState({div:this.state.orders});
+    }
+
 
 render(){
   console.log(this.state.orders);
  return(
 
 <div>
-          <button className = 'but'><Link to="/" className = 'buttons' >Salir.</Link></button>
+          <button className = 'but'><Link to="/" className = 'buttons' style={{ textDecoration: 'none'}}>Salir.</Link></button>
 
-      <div>
+      <div className = 'contenedorOrder container cont'>
       {this.state.orders.map((order, index) =>{
         return(
-                   <div key={index}>
+                   <div key={index} className = 'card'>
                        <h5 >Orden #{index+1}</h5>
                        <div >
                            {order.map((item, index)=>
                            <div key={index}>
                                <p>{item.name}</p>
+
                            </div>
                            )}
-
+                           <button className="sumit" onClick={(event) => this.removeRow(event, index)}>Pedido listo</button>
                       </div>
                   </div>
 )})}

@@ -5,6 +5,7 @@
   import '../css/breacfast.css';
   import '../css/links.css';
   import '../css/nameForm.css';
+  //import logo from '../imagenes/logo.png';
   //import FirebaseOrder from './FirebaseOrder';
 
 
@@ -122,9 +123,10 @@
       return (
         <div>
         <div>
+
         <div >
-        <button className = 'but'><Link to="/food" className = 'buttons' >Comida.</Link></button>
-        <button className = 'but'><Link to="/" className = 'buttons' >Salir.</Link></button>
+        <button className = 'but'><Link to="/food" className = 'buttons' style={{ textDecoration: 'none'}}>Comida.</Link></button>
+        <button className = 'but'><Link to="/" className = 'buttons' style={{ textDecoration: 'none'}}>Salir.</Link></button>
         </div>
         <div>
         <NameForm  addName={this.addName} />
@@ -169,6 +171,7 @@
               )
                 }
               </div>
+
         </div>
             <div>
             <button className="sumit" onClick={this.sumItem}>Total:{this.state.total}</button>
