@@ -5,6 +5,7 @@
   import '../css/breacfast.css';
   import '../css/links.css';
   import '../css/nameForm.css';
+  //import FirebaseOrder from './FirebaseOrder';
 
 
   class BreakfastFirebase extends Component {
@@ -21,7 +22,7 @@
       this.submit = this.submit.bind(this);
       this.addName = this.addName.bind(this);
       this.sumItem = this.sumItem.bind(this);
-      this.updateOrderToFirebase = this.updateOrderToFirebase.bind(this);
+      this.sendOrder = this.sendOrder.bind(this)
 
     };
 
@@ -51,12 +52,7 @@
     componentDidMount() {
       console.log('el componente se agregó al DOM')
       this.componentOrders();
-      //this.props.addOrders(this.state.new);
-      /*const ordersRef=firebase.database().ref().child('order');
-       ordersRef.set([
-           comands
-      ]);*/
-      //this.componentComands();
+      //this.sendOrder();
     }
 
     componentOrders(){
@@ -87,25 +83,30 @@
     }
 
 
-    updateOrderToFirebase = props =>{
-     let order = this.props.order;
-     const foodOrder =  firebase.database().ref('Ordenes/').child("order").push().key;
-     let updates = {};
-     updates["Ordenes/" + foodOrder] = order;
-     return (firebase.database().ref().update(updates), order="")
+    sendOrder= ()=>{
+        let order = this.state.comands;
+        const foodOrder =  firebase.database().ref('ComandBreakfast/').child('order').push().key;
+        let updates = {};
+        updates['ComandBreakfast/' + foodOrder] = order;
+        console.log('updates', updates);
+        return firebase.database().ref().update(updates);
+
+
     }
 
 
     sumItem () {
-        const itemPrice = this.state.comands.map((el) => el.price)
-        const products = itemPrice.reduce((sum, result) => {
-            return sum + result;
+        const price = this.state.comands.map((el) => el.price)
+        const products = price.reduce((sum, result) => {
+            return +sum + +result;
         });
 
         this.setState({
             total: products
         })
+
     }
+
 
     removeRow = (event, index) => {
           event.preventDefault();
@@ -117,6 +118,7 @@
 
     render(){
       console.log(this.state.comands);
+
       return (
         <div>
         <div>
@@ -169,15 +171,15 @@
               </div>
         </div>
             <div>
-            <button className="sumit" onClick={this.sumItem}>Total: $ {this.state.total}</button>
+            <button className="sumit" onClick={this.sumItem}>Total:{this.state.total}</button>
             </div>
 
 
         </div>
-        <div className="container">
-                   {console.log(this.props.order)}
-                   <button type="submit"  onClick={this.updateOrderToFirebase}>Enviar a cocina</button>
-               </div>
+        <div><button  type="button" className="sumit"
+         onClick={this.sendOrder}>
+             Enviar a Cocina
+        </button></div>
         </div>
 
 

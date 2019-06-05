@@ -1,5 +1,6 @@
 import * as firebase from 'firebase';
 
+
   // Your web app's Firebase configuration
   var firebaseConfig = {
       apiKey: "AIzaSyAnXHhFrG9kh8v_vSHf1U6Cr4M5NoORW8s",
