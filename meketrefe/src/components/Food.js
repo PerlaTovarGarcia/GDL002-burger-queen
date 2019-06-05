@@ -17,13 +17,15 @@ class Food extends Component {
     this.state={
       orders:[],
       comands:[],
-      value:''
+      value:'',
+      total:0
 
     };
-    //this.componentOrders = this.componentOrders.bind(this);
+
     this.submit = this.submit.bind(this);
     this.addName = this.addName.bind(this);
-    //this.addOrders = this.addOrders.bind(this);
+    this.sumItem = this.sumItem.bind(this);
+    this.sendOrder = this.sendOrder.bind(this)
 
   };
 
@@ -51,12 +53,6 @@ class Food extends Component {
   componentDidMount() {
     console.log('el componente se agregó al DOM')
     this.componentOrders();
-    //this.props.addOrders(this.state.new);
-    /*const ordersRef=firebase.database().ref().child('order');
-     ordersRef.set([
-         comands
-    ]);*/
-    this.componentComands();
   }
 
   componentOrders(){
@@ -74,6 +70,7 @@ class Food extends Component {
           price: ordersNew[order].price
 
         });
+        console.log(newState);
         }
 
       this.setState({
@@ -86,24 +83,27 @@ class Food extends Component {
 
   }
 
-  componentComands(){
-    const ordersRef=firebase.database().ref().child('orderFood');
+  sendOrder= ()=>{
+      let order = this.state.comands;
+      const foodOrder =  firebase.database().ref('ComandBreakfast/').child('order').push().key;
+      let updates = {};
+      updates['ComandBreakfast/' + foodOrder] = order;
+      console.log('updates', updates);
+      return firebase.database().ref().update(updates);
 
-    ordersRef.set([
-
-    ]);
 
   }
 
   sumItem () {
-      const itemPrice = this.state.comands.map((el) => el.price)
-      const products = itemPrice.reduce((sum, result) => {
-          return sum + result;
+      const price = this.state.comands.map((el) => el.price)
+      const products = price.reduce((sum, result) => {
+          return +sum + +result;
       });
 
       this.setState({
           total: products
       })
+
   }
 
 
@@ -174,6 +174,10 @@ class Food extends Component {
 
 
       </div>
+      <div><button  type="button" className="sumit"
+       onClick={this.sendOrder}>
+           Enviar a Cocina
+      </button></div>
       </div>
 
 

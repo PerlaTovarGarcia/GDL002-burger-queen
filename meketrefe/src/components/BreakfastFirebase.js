@@ -18,7 +18,7 @@
         total:0
 
       };
-      //this.componentOrders = this.componentOrders.bind(this);
+
       this.submit = this.submit.bind(this);
       this.addName = this.addName.bind(this);
       this.sumItem = this.sumItem.bind(this);
@@ -50,7 +50,7 @@
 
 
     componentDidMount() {
-      console.log('el componente se agregó al DOM')
+      //console.log('el componente se agregó al DOM')
       this.componentOrders();
       //this.sendOrder();
     }
