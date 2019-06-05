@@ -1,18 +1,18 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "36be9fcec5f953ac26d67cd24c8a8000",
+    "revision": "177cea9481e1cda21eb6ad3d8cd23ba1",
     "url": "/GDL002-burger-queen/index.html"
   },
   {
-    "revision": "802e73e26ab01eba0a6f",
-    "url": "/GDL002-burger-queen/static/css/main.dccf3a7c.chunk.css"
+    "revision": "4b54c017761020feac04",
+    "url": "/GDL002-burger-queen/static/css/main.7d7c9ef2.chunk.css"
   },
   {
     "revision": "3c6ecd2b6568d07b7509",
     "url": "/GDL002-burger-queen/static/js/2.98e541fa.chunk.js"
   },
   {
-    "revision": "802e73e26ab01eba0a6f",
+    "revision": "4b54c017761020feac04",
     "url": "/GDL002-burger-queen/static/js/main.f68b8ada.chunk.js"
   },
   {
@@ -24,7 +24,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/GDL002-burger-queen/static/media/logo2.c7987921.png"
   },
   {
-    "revision": "923bfbb1074eb0b1c647291552a8d7c9",
-    "url": "/GDL002-burger-queen/static/media/logo4.923bfbb1.png"
+    "revision": "2c25b4f8827bea5bb2df8d83bb6f168a",
+    "url": "/GDL002-burger-queen/static/media/logo4.2c25b4f8.png"
   }
 ]);
